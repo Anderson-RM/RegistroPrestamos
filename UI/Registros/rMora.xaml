@@ -1,0 +1,92 @@
+﻿<Window x:Class="RPrestamosDetalle.UI.Registros.rMora"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPrestamosDetalle.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registro Prestamos" Height="525" Width="450">
+    <Grid>
+
+        <StackPanel Orientation="Vertical" Margin="10,0,10,0">
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel Orientation="Horizontal" Height="37" Margin="0,0,1,0">
+                    <Label Content="MoraId:" FontWeight="Bold" Width="60" Margin="0,0,4,0"/>
+                    <TextBox x:Name="MoraIdTextBox" Text="{Binding MoraId}" Width="65" Height="30" Margin="0,0,10,0"/>
+
+                    <Button x:Name="BuscarButton" Click="BuscarButton_Click" Width="74" Padding="0,0,0,0" Margin="0,0,2,0" Height="30">
+                        <Label Content="Buscar"/>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Height="60">
+                    <Label Content="Fecha:" FontWeight="Bold" Margin="0,0,350,0"/>
+                    <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" Margin="0,0,200,0" />
+                </StackPanel>
+
+                <StackPanel Height="65">
+                    <Label Content="Total:" FontWeight="Bold" Margin="0,0,350,0"/>
+                    <TextBox x:Name="TotalTextBox" Text="{Binding Total}" Height="30" Margin="0,0,300,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <GroupBox>
+                        <StackPanel>
+                            <Label Content="PrestamoId" FontWeight="Bold" Margin="0,0,300,0"/>
+                            <TextBox x:Name="PrestamoIdTextBox" Text="{Binding Detalles.PrestamoId}" Height="26" Margin="0,0,300,0"/>
+
+                            <Label Content="Valor" Height="28" FontWeight="Bold" Margin="0,0,300,0" Padding="5,10,5,5"/>
+
+                            <StackPanel Orientation="Horizontal" Height="37">
+                                <TextBox x:Name="ValorTextBox" Text="{Binding Detalles.Valor}" Width="135" Height="28"/>
+                                <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="33" Width="81" Margin="10,0,-20,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Agregar fila"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button x:Name="RemoverFilaButton" Margin="30,0" Click="RemoverFilaButton_Click" Height="33">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Eliminar fila"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+
+                            <DataGrid x:Name="DetalleDataGrid" Height="148" AutoGenerateColumns="False" ItemsSource="{Binding Detalles}" SelectionChanged="DetalleDataGrid_SelectionChanged" FontWeight="Bold" Margin="0,0,0,10">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="MoraId" Binding="{Binding MorasId}"/>
+                                    <DataGridTextColumn Header="PrestamoId" Binding="{Binding PrestamoId}"/>
+                                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </GroupBox>
+
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="35" Width="344" Margin="0,0,-1,0" >
+
+                <Button x:Name="NuevoButton" Click="NuevoButton_Click" Margin="0,0,15,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Nuevo" Width="100" FontWeight="Bold" />
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="GuardarButton" Click="GuardarButton_Click" Margin="0,0,15,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Guardar" Width="100" FontWeight="Bold" />
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="EliminarButton" Click="EliminarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Eliminar" Width="100" FontWeight="Bold" />
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
