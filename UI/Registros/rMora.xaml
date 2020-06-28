@@ -11,12 +11,15 @@
         <StackPanel Orientation="Vertical" Margin="10,0,10,0">
             <StackPanel Orientation="Vertical">
 
-                <StackPanel Orientation="Horizontal" Height="37" Margin="0,0,1,0">
+                <StackPanel Orientation="Horizontal" Height="45" Margin="0,0,1,0">
                     <Label Content="MoraId:" FontWeight="Bold" Width="60" Margin="0,0,4,0"/>
                     <TextBox x:Name="MoraIdTextBox" Text="{Binding MoraId}" Width="65" Height="30" Margin="0,0,10,0"/>
 
-                    <Button x:Name="BuscarButton" Click="BuscarButton_Click" Width="74" Padding="0,0,0,0" Margin="0,0,2,0" Height="30">
-                        <Label Content="Buscar"/>
+                    <Button x:Name="BuscarButton" Click="BuscarButton_Click" Width="101" Padding="0,0,0,0" Margin="0,0,2,0" Height="40">
+                        <StackPanel Orientation="Horizontal">                            
+                            <Label Content="Buscar" Height="37" FontWeight="Bold" FontSize="16"/>
+                            <Image Height="30" Width="30" Source="/Resources/busca.png"/>
+                        </StackPanel>
                     </Button>
                 </StackPanel>
 
@@ -40,14 +43,16 @@
 
                             <StackPanel Orientation="Horizontal" Height="37">
                                 <TextBox x:Name="ValorTextBox" Text="{Binding Detalles.Valor}" Width="135" Height="28"/>
-                                <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="33" Width="81" Margin="10,0,-20,0">
+                                <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="34" Width="97" Margin="10,0,-20,-1">
                                     <StackPanel Orientation="Horizontal">
+                                        <Image Height="30" Width="20" Source="/Resources/agrega.png"/>
                                         <Label Content="Agregar fila"/>
                                     </StackPanel>
                                 </Button>
 
                                 <Button x:Name="RemoverFilaButton" Margin="30,0" Click="RemoverFilaButton_Click" Height="33">
                                     <StackPanel Orientation="Horizontal">
+                                        <Image Height="30" Width="17" Source="/Resources/quitar.png"/>
                                         <Label Content="Eliminar fila"/>
                                     </StackPanel>
                                 </Button>
@@ -66,23 +71,26 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Height="35" Width="344" Margin="0,0,-1,0" >
+            <StackPanel Orientation="Horizontal" Height="35" Width="374" Margin="0,0,-1,0" >
 
                 <Button x:Name="NuevoButton" Click="NuevoButton_Click" Margin="0,0,15,0">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Nuevo" Width="100" FontWeight="Bold" />
+                        <Image Height="30" Width="30" Source="/Resources/nuevo.png"/>
+                        <Label Content="Nuevo" Width="80" FontWeight="Bold" RenderTransformOrigin="1.704,11.816" FontSize="16" />
                     </StackPanel>
                 </Button>
 
                 <Button x:Name="GuardarButton" Click="GuardarButton_Click" Margin="0,0,15,0">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Guardar" Width="100" FontWeight="Bold" />
+                        <Image Height="30" Width="30" Source="/Resources/guarda.png"/>
+                        <Label Content="Guardar" Width="80" FontWeight="Bold" FontSize="16" />
                     </StackPanel>
                 </Button>
 
                 <Button x:Name="EliminarButton" Click="EliminarButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Eliminar" Width="100" FontWeight="Bold" />
+                        <Image Height="30" Width="30" Source="/Resources/elimina.png"/>
+                        <Label Content="Eliminar" Width="80" FontWeight="Bold" FontSize="16" />
                     </StackPanel>
                 </Button>
 
